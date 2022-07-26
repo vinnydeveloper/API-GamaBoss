@@ -1,0 +1,6 @@
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-07-26T03:18:58.073Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-07-26T03:18:58.093Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-07-26T03:20:32.113Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-07-26T03:20:32.131Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-07-26T03:20:52.585Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-07-26T03:20:52.605Z"}
