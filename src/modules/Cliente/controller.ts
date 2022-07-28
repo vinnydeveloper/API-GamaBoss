@@ -21,7 +21,7 @@ const controller = {
     });
 
     if (savedClient) {
-      logger.warn(`[createClient] Tentativa repetida de cadastro: ${req.socket.remoteAddress}`);
+      logger.warn(`[createClient] Tentativap repetida de cadastro: ${req.socket.remoteAddress}`);
       return res.status(400).json("Email já cadastrado no banco");
     }
 

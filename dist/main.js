@@ -5,5 +5,5 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const App_1 = __importDefault(require("./infra/App"));
 const instanceOf = new App_1.default();
-// instanceOf.setup({port: 8080, test: true });
-instanceOf.setup({ port: 8080 });
+// instanceOf.setup({test: true });
+instanceOf.setup({});

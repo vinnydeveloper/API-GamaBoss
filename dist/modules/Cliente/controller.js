@@ -18,6 +18,9 @@ const path_1 = __importDefault(require("path"));
 const logger_1 = __importDefault(require("../../infra/logger"));
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const controller = {
+    start(req, res) {
+        return res.status(200).json("API em execução.");
+    },
     createClient(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const hash = bcryptjs_1.default.hashSync(req.body.senha, 10);
@@ -27,7 +30,7 @@ const controller = {
                 email,
             });
             if (savedClient) {
-                logger_1.default.warn(`[createClient] Tentativa repetida de cadastro: ${req.socket.remoteAddress}`);
+                logger_1.default.warn(`[createClient] Tentativap repetida de cadastro: ${req.socket.remoteAddress}`);
                 return res.status(400).json("Email já cadastrado no banco");
             }
             const image = yield Images_1.default.create({

@@ -18,6 +18,7 @@ const logger_1 = __importDefault(require("./logger"));
 const detect_port_1 = __importDefault(require("detect-port"));
 const database_1 = require("../database");
 const BaseRoutes_1 = __importDefault(require("./BaseRoutes"));
+const cors_1 = __importDefault(require("cors"));
 class App {
     constructor() {
         this.defaultPort = 8080;
@@ -26,6 +27,7 @@ class App {
     setup(options) {
         return __awaiter(this, void 0, void 0, function* () {
             const selectedPort = options.port ? options.port : this.defaultPort;
+            this.instance.use((0, cors_1.default)());
             this.instance.use(express_1.default.json());
             this.instance.use(express_1.default.static("uploads"));
             this.instance.use(BaseRoutes_1.default);
@@ -42,7 +44,7 @@ class App {
             (0, detect_port_1.default)(selectedPort)
                 .then(_port => {
                 if (selectedPort == _port) {
-                    this.instance.listen(process.env.PORT || selectedPort, () => {
+                    this.instance.listen(selectedPort, () => {
                         console.log(`[OK] API aguardando requisições... [Porta TCP ${selectedPort}]`);
                         logger_1.default.info("[setup] API em execução.");
                     });
