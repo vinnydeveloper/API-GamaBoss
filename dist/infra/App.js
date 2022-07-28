@@ -21,7 +21,7 @@ const BaseRoutes_1 = __importDefault(require("./BaseRoutes"));
 const cors_1 = __importDefault(require("cors"));
 class App {
     constructor() {
-        this.defaultPort = 8080;
+        this.defaultPort = process.env.PORT || 8080;
         this.instance = (0, express_1.default)();
     }
     setup(options) {
@@ -44,7 +44,7 @@ class App {
             (0, detect_port_1.default)(selectedPort)
                 .then(_port => {
                 if (selectedPort == _port) {
-                    this.instance.listen(selectedPort, () => {
+                    this.instance.listen(process.env.PORT || selectedPort, () => {
                         console.log(`[OK] API aguardando requisições... [Porta TCP ${selectedPort}]`);
                         logger_1.default.info("[setup] API em execução.");
                     });
