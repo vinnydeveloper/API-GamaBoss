@@ -20,12 +20,13 @@ export default class App {
   }
 
   async setup(options: SetupOptions): Promise<void> {
+    await mongoDB.createConnection();
     const selectedPort = options.port ? options.port : this.defaultPort;
     this.instance.use(cors());
     this.instance.use(Express.json());
     this.instance.use(Express.static("uploads"));
     this.instance.use(BaseRoutes);
-    await mongoDB.createConnection();
+    
 
     if (options.test) {
       console.log("[OK] Teste de configuração.");
